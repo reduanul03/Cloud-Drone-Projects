@@ -1,0 +1,335 @@
+       :root {
+            --primary-color: #89ba16;
+            --secondary-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: "Quicksand", sans-serif;
+            background: linear-gradient(rgb(16, 14, 136), rgba(16, 69, 129, 0.918)), green;
+            color: #333;
+            padding-top: 80px;
+            margin: 0;
+            min-height: 200vh;
+        }
+
+        .donation-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .donation-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .donation-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .donation-header p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .donation-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Quicksand", sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(137, 186, 22, 0.2);
+        }
+        
+        .amount-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .amount-option {
+            width: 100%;
+        }
+        
+        .amount-option input[type="radio"] {
+            display: none;
+        }
+        
+        .amount-option label {
+            display: block;
+            padding: 12px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .amount-option input[type="radio"]:checked + label {
+            border-color: var(--primary-color);
+            background-color: rgba(137, 186, 22, 0.1);
+        }
+        
+        .custom-amount {
+            margin-top: 15px;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .payment-method {
+            width: 100%;
+        }
+        
+        .payment-method input[type="radio"] {
+            display: none;
+        }
+        
+        .payment-method label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            height: 100%;
+            font-size: 0.9rem;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .payment-method input[type="radio"]:checked + label {
+            border-color: var(--primary-color);
+            background-color: rgba(137, 186, 22, 0.1);
+        }
+        
+        .payment-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .btn-donate {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .btn-donate:hover {
+            background-color: #7aa814;
+        }
+        
+        /* Payment sections */
+        .payment-section {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .payment-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bkash-button {
+            background: #e2136e;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .bkash-button:hover {
+            background: #c81060;
+        }
+        
+        .bank-details {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .bank-details p {
+            margin: 8px 0;
+            color: #333;
+        }
+        
+        .security-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 15px;
+        }
+        
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .donation-container {
+                padding: 30px;
+            }
+            
+            .donation-form {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 2;
+            }
+            
+            .amount-options {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .payment-methods {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .payment-method label {
+                flex-direction: row;
+                text-align: left;
+                padding: 15px;
+            }
+            
+            .payment-icon {
+                margin-bottom: 0;
+                margin-right: 8px;
+            }
+            
+            .donation-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .donation-header p {
+                font-size: 1.1rem;
+            }
+        }
+
+    /* Mobile View (Default / Max-width: 767px) */
+    @media (min-width: 428px) {
+.donation-container {
+        padding: 20px;
+        max-width: 350px; 
+        width: 90%; 
+        margin: 0 auto; 
+        background: #fff; 
+        border-radius: 12px;
+}
+
+.donation-form {
+    display: grid;
+    grid-template-columns: 2fr; 
+    gap: 15px;
+}
+
+.form-group.full-width {
+    grid-column: span ; 
+}
+
+.amount-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 10px;
+}
+
+.payment-method label {
+    flex-direction: column; 
+    text-align: center;
+    padding: 12px;
+}
+
+.payment-icon {
+    margin-bottom: 5px;
+    margin-right: 0;
+}
+
+.donation-header h1 {
+    font-size: 1.6rem; 
+}
+
+.donation-header p {
+    font-size: 0.95rem;
+}
+}
